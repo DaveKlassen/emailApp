@@ -1,0 +1,92 @@
+    <form name="myForm" class="css-form">
+    <!-- Input with validation --> 
+    <table>
+      <tr>
+        <td class="label inputLabel">
+            Contact Email:
+        </td>
+        <td>
+            <div id="emailDropdown" class="editableDropdown" >
+                <input id="emailInput" type="email"  name="email" ng-model="email" 
+                   ng-required="!email"/>
+                <div id="emailButton" class="divButton" ng-click="searchHints()">&nbsp;</div>
+            </div><!--
+            <div id="email_hints">{{hintList}}</div>-->
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myForm.email.$valid)">
+            {{emailError}}
+        </td>
+      </tr>
+      <tr>
+        <td class="label inputLabel">
+            Subject: 
+        </td>
+        <td>
+            <input class="formInputArea" name="subject" ng-model="subject"
+                    ng-minlength="1"
+                    ng-required="!subject" />
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myForm.subject.$valid)">
+            {{subjectError}}
+        </td>          
+      </tr>
+      <tr>
+        <td class="label inputLabel">
+            Message Body:
+        </td>
+        <td>
+            <textarea id="messageBody" class="formInputArea" name="message" ng-model="message"
+                    ng-minlength="4"
+                    ng-maxlength="255"
+                    ng-required="!message">
+            </textarea>
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myForm.message.$valid)">
+            {{messageError}}
+        </td>          
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            <button id="submitButton" class="formInputArea" ng-click="submitEmail(myForm)">Send Email</button>
+        </td>
+        <td>
+        </td>          
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+        </td>          
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td> <!-- Validation message for mail -->        
+            <span id="mailSuccessful" ng-if="valid" ng-bind-html="mailSuccessful"/>
+        </td>
+        <td>
+        </td>          
+      </tr>        
+        
+    </table>
+        <!-- Show validation error messages 
+        <span ng-show="myForm.email.$valid">Email Address Great</span>
+        <span ng-show="!myForm.email.$valid">Email Address BAD!!!</span><br/>
+        <span ng-show="myForm.subject.$error.minlength">Minimum 3 characters required for city!</span>
+        <span ng-show="myForm.subject.$error.maxlength">More than 10 characters not permitted for city!</span>
+        <span ng-show="myForm.subject.$error.pattern">Only alphabetical characters allowed for city!</span>
+        <span ng-show="myForm.subject.$error.required">City required!</span>
+        <span ng-show="myForm.subject.$valid">City valid!</span>
+        <span ng-show="!myForm.subject.$valid">City not valid!</span><br>
+        <span ng-show="myForm.message.$error.minlength">Minimum 4 characters required for Message!</span>
+        <span ng-show="myForm.message.$error.maxlength">More than 255 characters not permitted for Message!</span>
+        <span ng-show="myForm.message.$error.required">Message required!</span>
+        <span ng-show="myForm.message.$valid">Message valid!</span>
+        <span ng-show="!myForm.message.$valid">Message not valid!</span><br>        
+        -->        
+    </form>

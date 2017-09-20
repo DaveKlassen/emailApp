@@ -1,0 +1,88 @@
+<div class="subPage">
+
+  <form name="myContact">
+    <table>
+      <tr>
+        <td class="label inputLabel">
+            First Name:
+        </td>
+        <td>
+            <input class="formInputArea" name="firstName" ng-model="firstName"
+                    ng-minlength="2"
+                    ng-required="!firstName" />
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myContact.firstName.$valid)">
+            {{fNameError}}
+        </td>
+      </tr>
+      <tr>
+        <td class="label inputLabel">
+            Last Name: 
+        </td>
+        <td>
+            <input class="formInputArea" name="lastName" ng-model="lastName"
+                    ng-minlength="2"
+                    ng-required="!lastName" />
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myContact.lastName.$valid)">
+            {{lNameError}}
+        </td>         
+      </tr>
+      <tr>
+        <td class="label inputLabel">
+            Email: 
+        </td>
+        <td>
+            <input type="email" class="formInputArea" name="email" ng-model="email"
+                    ng-required="!email" />
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myContact.email.$valid)">
+            {{emailError}}
+        </td>
+      </tr>
+      <tr>
+        <td class="label inputLabel">
+            City: 
+        </td>
+        <td>
+            <input class="formInputArea" name="city" ng-model="city"
+                    ng-minlength="2"
+                    ng-required="!city" />
+        </td>
+        <td class="label errorLabel" ng-if="(!valid && !myContact.city.$valid)">
+            {{cityError}}
+        </td>          
+      </tr>         
+      <tr>
+        <td>
+        </td>
+        <td>
+            <button id="submitButton" class="formInputArea" ng-click="submitContact(myContact)">Add Contact</button>
+        </td>
+        <td>
+        </td>          
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+        </td>          
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td> <!-- Validation message for mail -->        
+            <span id="contactSuccessful" ng-if="valid" ng-bind-html="contactSuccessful"/>
+        </td>
+        <td>
+        </td>          
+      </tr>        
+        
+    </table>
+      
+  </form>
+
+</div>

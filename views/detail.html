@@ -1,0 +1,93 @@
+<div class="subPage">
+    <form name="myContact">
+    <table>
+        <tr>
+            <td class="label inputLabel">
+                First Name:
+            </td>
+            <td>
+                <div class="tableArea" ng-if="(editMode === null)">
+                    {{contact.firstName}}
+                </div>
+                <div ng-if="(editMode)">
+                    <input class="formInputArea" name="firstName" ng-model="firstName"
+                            ng-minlength="2"
+                            ng-required="!firstName">
+                </div>                
+            </td>
+            <td class="label errorLabel" ng-if="(!valid && !myContact.firstName.$valid)">
+                <div ng-if="(!editMode)">
+                    <button id="editButton" class="" ng-click="setEditContact()">Edit</button>
+                </div>
+                <div ng-if="(editMode)">
+                    {{fNameError}}
+                </div>
+            </td>            
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                Last Name:
+            </td>
+            <td>
+                <div class="tableArea" ng-if="(!editMode)">
+                    {{contact.lastName}}
+                </div>
+                <div ng-if="(editMode)">
+                    <input class="formInputArea" name="lastName" ng-model="lastName"
+                            ng-minlength="2"
+                            ng-required="!lastName"/>                    
+                </div>                
+            </td>
+            <td class="label errorLabel" ng-if="(!valid && !myContact.lastName.$valid)">
+                {{lNameError}}
+            </td>                 
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                Email:
+            </td>
+            <td>
+                <div class="tableArea" ng-if="(!editMode)">
+                    {{contact.email}}
+                </div>
+                <div ng-if="(editMode)">
+                    <input type="email" class="formInputArea" name="email" ng-model="email"
+                            ng-required="!email"/>                    
+                </div>
+            </td>
+            <td class="label errorLabel" ng-if="(!valid && !myContact.email.$valid)">
+                {{emailError}}
+            </td>            
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                City: 
+            </td>
+            <td>
+                <div class="tableArea" ng-if="(!editMode)">
+                    {{contact.cityName}}
+                </div>
+                <div ng-if="(editMode)">
+                    <input class="formInputArea" name="city" ng-model="city"
+                            ng-minlength="2"
+                            ng-required="!city"/>
+                </div>
+            </td>
+            <td class="label errorLabel" ng-if="(!valid && !myContact.city.$valid)">
+                {{cityError}}
+            </td>            
+        </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            <div ng-if="(editMode)">
+                <button id="editButton" class="formInputArea" ng-click="editContact(contact.id, myContact)">Update Contact</button>
+            </div>
+        </td>
+        <td>
+        </td>          
+      </tr>        
+    </table>
+    </form>
+</div>

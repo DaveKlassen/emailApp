@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    
+    <title> Comic Communications</title>
+    
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <script src="https://code.angularjs.org/snapshot/angular.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-route.js"></script>
+
+    <!-- Using the sanitizer to allow programmaic html entity encoding -->
+    <script src="https://code.angularjs.org/snapshot/angular-sanitize.js"></script>
+
+    <script src="js/controller.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service.js"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+</head>
+<!-- Notice here that ng-app references our 'cardApp' module -->
+<body ng-app='emailApp'>
+
+    <!-- Reference the application level controller for the title model. -->
+    <div ng-controller="AppCtrl" ng-model="title">
+        <h1>{{title}}</h1>
+
+        <!-- The #email link selects routing for '/email'. -->
+        <nav ng-init="setActive()">
+          <div class="topnav" id="myTopnav">
+            <a id="email" class="navLink notActivated" href="#email" ng-click="normNav($event)">Email</a>
+            <a id="contactList" class="navLink notActivated" href="#email/list" ng-click="normNav($event)">List</a>
+            <a id="contacts" class="navLink notActivated" href="#email/contacts" ng-click="normNav($event)">Contacts</a>
+            <a id="about" class="navLink notActivated" href="#email/about" ng-click="normNav($event)">About</a>
+            <a href="javascript:void(0);" class="icon" ng-click="miniNav($event)">&#9776;</a>  
+          </div>
+        </nav>
+
+        <!-- Our one page app works by switching views here. -->
+        <div ng-view></div><br />
+        
+    </div>
+</body>
+</html>
+

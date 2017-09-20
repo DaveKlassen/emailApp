@@ -1,0 +1,163 @@
+.css-form { 
+    margin-top: 30px;
+}
+.subPage { 
+    margin: 30px;
+}
+
+#mailSuccessful, #contactSuccessful {
+    color: green;
+    margin: 3px 20px;
+}
+
+.label {
+    padding-top: 5px;
+    vertical-align: text-top;
+}
+/* The input labels should stay the same */
+.inputLabel {
+    text-align: right;
+    white-space: nowrap;
+}
+/* The error lables will wrap if no space */
+.errorLabel {
+    color: red;
+    text-align: left;
+}
+
+.editableDropdown {
+    margin: 3px 20px;    
+}
+#emailInput {
+    width: 280px;
+}
+/* https://stackoverflow.com/questions/23608346/how-to-style-a-div-like-the-button-element */
+.divButton {
+    padding: 2px 6px; 
+    border: solid #707070 1px; 
+    font-family: caption; 
+    font-size: 14px; 
+    background: grey; 
+    display: inline; 
+    border-radius: 2px;
+    background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0, #F2F2F2), color-stop(1, #CFCFCF));
+    background-image: -o-linear-gradient(bottom, #F2F2F2 0%, #CFCFCF 100%);
+    background-image: -moz-linear-gradient(bottom, #F2F2F2 0%, #CFCFCF 100%);
+    background-image: -webkit-linear-gradient(bottom, #F2F2F2 0%, #CFCFCF 100%);
+    background-image: -ms-linear-gradient(bottom, #F2F2F2 0%, #CFCFCF 100%);
+    background-image: linear-gradient(to bottom, #F2F2F2 0%, #CFCFCF 100%);
+    cursor: default;
+    text-align: center;
+}
+#HintList {    
+    position: absolute;
+    width: 283px;
+    text-indent: 10px;
+    font-size: 0.80em;    
+    border: 1px solid #CCC;
+    border-top: none;
+    background-color: white;
+    font-weight: 500;
+    z-index: 1;
+}
+#HintList div:hover {
+    font-weight: bold;
+    background-color: #cce7ff;
+}
+
+.formInputArea {
+    width: 300px;
+    margin: 3px 20px;
+}
+
+#messageBody {
+    width: 298px;
+    height: 110px;
+}
+
+#submitButton {
+    width: 304px;
+    margin-top: 10px;
+}
+
+.tableArea {
+    padding: 5px 20px;
+}
+
+
+/*
+ *  Simple Nav bar example:
+ *
+ *  https://www.w3schools.com/howto/howto_js_topnav_responsive.asp 
+ */
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.active {
+    background-color: #444;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a.activated {
+    background-color: #367c39;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #AAA;
+    color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+    font-size: 14px;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a.notActivated {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Using CSS can be great for debugging. 
+.css-form input.ng-invalid.ng-dirty { background-color: #FA787E; }
+.css-form input.ng-valid.ng-dirty  {  background-color: #78FA89; }
+.css-form input.ng-pristine { background-color: #DDD; }
+.css-form input.ng-untouched { background-color: aquamarine; }
+
+.css-form textarea.ng-invalid.ng-dirty { background-color: #FA787E; }
+.css-form textarea.ng-valid.ng-dirty  {  background-color: #78FA89; }
+.css-form textarea.ng-pristine { background-color: #DDD; }
+.css-form textarea.ng-untouched { background-color: aquamarine; }
+*/

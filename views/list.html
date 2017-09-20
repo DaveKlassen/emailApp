@@ -1,0 +1,57 @@
+<div class="subPage">
+    <table>
+        <tr ng-repeat="contact in contacts">
+            <td class="tableArea">
+                <a ng-click="selectContact(contact.firstName, contact.lastName)" href="">Detail</a>
+            </td>
+            <td class="tableArea">{{contact.email}}</td>            
+        </tr>
+    </table>
+</div>
+
+<hr/>
+<div class="subPage" ng-if="selectedContact">
+    <table>
+        <tr>
+            <td class="label inputLabel">
+                First Name:
+            </td>
+            <td class="tableArea">
+                {{selectedContact.firstName}}
+            </td>
+            <td>
+                <button id="editButton" class="" ng-click="editContact(selectedContact)">Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                Last Name:
+            </td>
+            <td class="tableArea">
+                {{selectedContact.lastName}}
+            </td>
+            <td>
+            </td>            
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                Email:
+            </td>
+            <td class="tableArea">
+                {{selectedContact.email}}
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td class="label inputLabel">
+                City: 
+            </td>
+            <td class="tableArea">
+                {{selectedContact.cityName}}
+            </td>
+            <td>
+            </td>            
+        </tr>
+    </table>
+</div>
